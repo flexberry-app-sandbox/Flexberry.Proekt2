@@ -38,14 +38,14 @@
     "Storage": {
       "Mssql": {
         "DiffSql": false,
-        "FullSql": true,
+        "FullSql": false,
         "LiquibaseSql": false,
         "Security": false,
         "AdminUser": false,
         "ConnectionString": null
       },
       "PostgreSql": {
-        "DiffSql": false,
+        "DiffSql": true,
         "FullSql": true,
         "LiquibaseSql": false,
         "Security": false,
@@ -59,7 +59,7 @@
       },
       "Oracle": {
         "DiffSql": false,
-        "FullSql": true,
+        "FullSql": false,
         "ConnectionString": null
       },
       "Access": {
