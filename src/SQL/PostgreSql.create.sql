@@ -5,28 +5,28 @@
 
 CREATE TABLE Календарь (
  primaryKey UUID NOT NULL,
+ Конец VARCHAR(255) NULL,
  Начало VARCHAR(255) NULL,
  Трудозатраты INT NULL,
- Конец VARCHAR(255) NULL,
  Планирование UUID NOT NULL,
  ПроектИС UUID NOT NULL,
- Участник UUID NOT NULL,
  Роли UUID NOT NULL,
+ Участник UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
 CREATE TABLE ПроектИС (
  primaryKey UUID NOT NULL,
- Наименование VARCHAR(255) NULL,
  Бюджет INT NULL,
+ Наименование VARCHAR(255) NULL,
  Срок VARCHAR(255) NULL,
  PRIMARY KEY (primaryKey));
 
 
 CREATE TABLE Участник (
  primaryKey UUID NOT NULL,
- ФИО VARCHAR(255) NULL,
  Роль VARCHAR(12) NULL,
+ ФИО VARCHAR(255) NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -137,10 +137,10 @@ CREATE INDEX Index5caf1fcb95bee9a9ff25cf3416cd33d54d0fa9c1 on Календарь
 
  ALTER TABLE Календарь ADD CONSTRAINT FK35f9bb34fdbbbe7627f312177b7d9e0cd03e299b FOREIGN KEY (ПроектИС) REFERENCES ПроектИС; 
 CREATE INDEX Index35f9bb34fdbbbe7627f312177b7d9e0cd03e299b on Календарь (ПроектИС); 
+CREATE INDEX Indexb070b1a329a9b508e1210512c3ed6bdccffbbc9b on Календарь (Роли); 
 
  ALTER TABLE Календарь ADD CONSTRAINT FKad0baf9f0bcf74a2be0d5f713790d4efe2ec05fa FOREIGN KEY (Участник) REFERENCES Участник; 
 CREATE INDEX Indexad0baf9f0bcf74a2be0d5f713790d4efe2ec05fa on Календарь (Участник); 
-CREATE INDEX Indexb070b1a329a9b508e1210512c3ed6bdccffbbc9b on Календарь (Роли); 
 
  ALTER TABLE STORMWEBSEARCH ADD CONSTRAINT FKc4378e39870eb056aec84088683297a01d2a6200 FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
 
